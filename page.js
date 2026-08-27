@@ -136,7 +136,7 @@ function getData() {
 
         } else {
           //message display with replying text
-          name_with_tag = "<h4 class='prevent-select'> " + name + "</h4>"; //name
+          name_with_tag = "<h4 class='prevent-select' > " + 'TASK' + "</h4>"; //name
           if (replying == "") {
             reply_text_box = ""; //replying text box
           } else {
@@ -144,7 +144,7 @@ function getData() {
           }
           message_with_tag = "<h4 class='message_h4 sub-text' id=' " + message + " '>" + message + "</h4>"; //message
           hidden_button = "<button style='visibility: hidden;' class='prevent-select'>~</button>"; //hidden button
-          reply_button = "<button class='btn btn-success prevent-select' id='" + firebase_message_id + "' value='" + message + "' onclick='replyText(this.id)'>Reply</button>"; //reply button
+          reply_button = "<button class='btn btn-info prevent-select' style='visibility: hidden;' id='" + firebase_message_id + "' value='" + message + "' onclick='replyText(this.id)'>Edit</button>"; //reply button
           //delete button display option
           if (name == user_name_temp) {
             //delete button visible as message sent by user

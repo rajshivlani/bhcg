@@ -21,85 +21,89 @@ function showPassword() {
 }
 
 function addUser() {
-  password = document.getElementById("password_entry").value;
   user_name = document.getElementById("user_name").value;
-  if (user_name == "Raj") {
-    if (password == "r") {
-      firebase.database().ref("Logins/").push({
-        name: user_name,
-        time: time,
-      });
-      localStorage.setItem("user_name_main", user_name);
-      window.location = "page.html";
-    } else {
-      firebase.database().ref("Failed_Logins/").push({
-        name: user_name,
-        time: time,
-        password: password,
-      });
-      console.log("wrong password");
-    }
-  } else if (user_name == "Test1") {
-    if (password == "bits") {
-      firebase.database().ref("Logins/").push({
-        name: user_name,
-        time: time,
-      });
-      localStorage.setItem("user_name_main", user_name);
-      window.location = "page.html";
-    } else {
-      firebase.database().ref("Failed_Logins/").push({
-        name: user_name,
-        time: time,
-        password: password,
-      });
-    }
-  } else if (user_name == "Test2") {
-    if (password == "bits") {
-      firebase.database().ref("Logins/").push({
-        name: user_name,
-        time: time,
-      });
-      localStorage.setItem("user_name_main", user_name);
-      window.location = "page.html";
-    } else {
-      firebase.database().ref("Failed_Logins/").push({
-        name: user_name,
-        time: time,
-        password: password,
-      });
-    }
-  } else if (user_name == "Test3") {
-    if (password == "bits") {
-      firebase.database().ref("Logins/").push({
-        name: user_name,
-        time: time,
-      });
-      localStorage.setItem("user_name_main", user_name);
-      window.location = "page.html";
-    } else {
-      firebase.database().ref("Failed_Logins/").push({
-        name: user_name,
-        time: time,
-        password: password,
-      });
-    }
-  } else if (user_name == "Temp") {
-    if (password == "12") {
-      localStorage.setItem("user_name_main", user_name);
-      window.location = "page.html";
-    } else {
-      firebase.database().ref("Failed_Logins/").push({
-        name: user_name,
-        time: time,
-        password: password,
-      });
-    }
-  } else {
-    firebase.database().ref("Failed_Logins/").push({
-      name: user_name,
-      time: time,
-      password: password,
-    });
-  }
+  firebase.database().ref("Logins/").push({
+    name: user_name,
+  });
+  localStorage.setItem("user_name_main", user_name);
+  window.location = "page.html";
+  // if (user_name == "Raj") {
+  //   if (password == "r") {
+  //     firebase.database().ref("Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //     });
+  //     localStorage.setItem("user_name_main", user_name);
+  //     window.location = "page.html";
+  //   } else {
+  //     firebase.database().ref("Failed_Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //       password: password,
+  //     });
+  //     console.log("wrong password");
+  //   }
+  // } else if (user_name == "Test1") {
+  //   if (password == "bits") {
+  //     firebase.database().ref("Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //     });
+  //     localStorage.setItem("user_name_main", user_name);
+  //     window.location = "page.html";
+  //   } else {
+  //     firebase.database().ref("Failed_Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //       password: password,
+  //     });
+  //   }
+  // } else if (user_name == "Test2") {
+  //   if (password == "bits") {
+  //     firebase.database().ref("Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //     });
+  //     localStorage.setItem("user_name_main", user_name);
+  //     window.location = "page.html";
+  //   } else {
+  //     firebase.database().ref("Failed_Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //       password: password,
+  //     });
+  //   }
+  // } else if (user_name == "Test3") {
+  //   if (password == "bits") {
+  //     firebase.database().ref("Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //     });
+  //     localStorage.setItem("user_name_main", user_name);
+  //     window.location = "page.html";
+  //   } else {
+  //     firebase.database().ref("Failed_Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //       password: password,
+  //     });
+  //   }
+  // } else if (user_name == "Temp") {
+  //   if (password == "12") {
+  //     localStorage.setItem("user_name_main", user_name);
+  //     window.location = "page.html";
+  //   } else {
+  //     firebase.database().ref("Failed_Logins/").push({
+  //       name: user_name,
+  //       time: time,
+  //       password: password,
+  //     });
+  //   }
+  // } else {
+  //   firebase.database().ref("Failed_Logins/").push({
+  //     name: user_name,
+  //     time: time,
+  //     password: password,
+  //   });
+  // }
 }
