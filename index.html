@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BHCG</title>
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="jpg" href="cbse.png">
+	<script src="main.js"></script>
+</head>
+
+<body id="body1" class="prevent-select" style="background-color: white;">
+	<center>
+		<div class="container form-group" onclick="onclick">
+			<div class="top"></div>
+			<div class="bottom"></div>
+			<div class="center">
+				<h2 class="sub-text prevent-select">Please Sign In</h2>
+				<input id="user_name" class="sub-text form-control prevent-select" type="username"
+					placeholder="User name" />
+				<input id="password_entry" class="form-control sub-text prevent-select" type="password"
+					placeholder="Password" />
+				<button id="login-button" class="btn btn-success prevent-select sub-text" onclick="addUser()"
+					type="submit">Sign In</button>
+				<!-- <p class="sub-text">Don't have an account? <a href="sign_up.html">Sign Up</a></p> -->
+			</div>
+		</div>
+		<script>
+			const getUA = () => {
+				let device = "Unknown";
+				const ua = {
+					"Generic Linux": /Linux/i,
+					"Android": /Android/i,
+					"BlackBerry": /BlackBerry/i,
+					"Bluebird": /EF500/i,
+					"Chrome OS": /CrOS/i,
+					"Datalogic": /DL-AXIS/i,
+					"Honeywell": /CT50/i,
+					"iPad": /iPad/i,
+					"iPhone": /iPhone/i,
+					"iPod": /iPod/i,
+					"macOS": /Macintosh/i,
+					"Windows": /IEMobile|Windows/i,
+					"Zebra": /TC70|TC55/i,
+				}
+				Object.keys(ua).map(v => navigator.userAgent.match(ua[v]) && (device = v));
+				return device;
+			}
+
+			console.log(getUA());
+
+			function text(url) {
+				return fetch(url).then(res => res.text());
+			}
+
+			var input = document.getElementById("password_entry");
+			input.addEventListener("keypress", function (event) {
+				if (event.key === "Enter") {
+					event.preventDefault();
+					document.getElementById("login-button").click();
+				}
+			});
+
+			function refreshTime() {
+				var datedate = new Date().getDate();
+				var datemonth = new Date().getMonth();
+				var dateyear = new Date().getFullYear();
+				var datemin = new Date().getMinutes();
+				var datesec = new Date().getSeconds();
+				var datehour = new Date().getHours();
+				datemonth = datemonth + 1;
+				time = "Yess! Date: " + datedate + "|" + datemonth + "|" + dateyear + " time: " + datehour + ":" + datemin +
+					"." + datesec;
+			}
+			setInterval(refreshTime, 1000);
+		</script>
+		<div style="visibility: hidden;"> ~ </div>
+		</div>
+
+		<br><br>
+		</div>
+	</center>
+</body>
+
+</html>
